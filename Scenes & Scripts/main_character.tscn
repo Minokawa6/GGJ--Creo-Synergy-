@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c8xlqxrlxk8k7"]
+
+[ext_resource type="Script" path="res://Scenes & Scripts/MainCharacter.gd" id="1_u7svr"]
+[ext_resource type="Texture2D" uid="uid://d4jla6sii1cqu" path="res://icon.svg" id="2_u8i21"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g8kg6"]
+size = Vector2(128, 129)
+
+[node name="MainCharacter" type="CharacterBody2D"]
+script = ExtResource("1_u7svr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_u8i21")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Player"]]
+position = Vector2(0, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_g8kg6")
+metadata/_edit_lock_ = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g8kg6")
+metadata/_edit_lock_ = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
