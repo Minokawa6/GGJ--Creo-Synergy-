@@ -1,12 +1,7 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+@onready var sprite = get_node("AnimatedSprite2D")
 
 func _physics_process(delta):
 	var direction = Vector2()
@@ -14,6 +9,15 @@ func _physics_process(delta):
 	
 	direction.x = Input.get_axis("Right", "Left")
 	direction.y = Input.get_axis("Up","Down")
+	
+	if direction.y < 0:
+		sprite.frame = 2
+	elif direction.y > 0: 
+		sprite.frame = 0
+	elif direction.x > 0:
+		sprite.frame = 1
+	elif direction.x < 0:
+		sprite.frame = 1
 	
 	if direction:
 		velocity = direction.normalized() * SPEED
@@ -23,7 +27,9 @@ func _physics_process(delta):
 		velocity.normalized()
 	
 	move_and_slide()
-	#collision = 
-	#if collision:
-	#	velocity = velocity.slide(collision.get_normal())
-	
+
+func _on_area_2d_area_entered(area):
+	print("Flower")
+
+func _on_flower_body_exited(body):
+	print("Left Flower")

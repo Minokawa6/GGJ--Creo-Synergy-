@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://o7nbri1n5ban"]
+
+[ext_resource type="Script" path="res://Scenes & Scripts/gui.gd" id="1_edua8"]
+[ext_resource type="Texture2D" uid="uid://1hf6y6v1r1r" path="res://Assets/Temporary Assets/3104538.png" id="1_oqsi1"]
+
+[node name="Gui" type="Control"]
+layout_direction = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_edua8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -164.0
+offset_top = -87.0
+offset_right = 7.0
+offset_bottom = 84.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_oqsi1")
+expand_mode = 1
