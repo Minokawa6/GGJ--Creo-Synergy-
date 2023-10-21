@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di8aoaejxo2dy"
-path="res://.godot/imported/Bean Sprout Front.png-1aa57f5e9dc86e016a921b367484ffe5.ctex"
+uid="uid://cf56ipypkcl4d"
+path="res://.godot/imported/Bean S Character Back F3.png-efd88138453409d3b8b917f9c60a23e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character Assets/Bean Sprout Front.png"
-dest_files=["res://.godot/imported/Bean Sprout Front.png-1aa57f5e9dc86e016a921b367484ffe5.ctex"]
+source_file="res://Assets/Character Assets/Bean S Character Back F3.png"
+dest_files=["res://.godot/imported/Bean S Character Back F3.png-efd88138453409d3b8b917f9c60a23e6.ctex"]
 
 [params]
 

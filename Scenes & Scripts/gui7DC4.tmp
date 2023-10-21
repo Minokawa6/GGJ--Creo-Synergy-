@@ -47,6 +47,7 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 disabled = true
+toggle_mode = true
 texture_normal = ExtResource("3_7g0e6")
 texture_pressed = ExtResource("4_1wjld")
 texture_hover = ExtResource("4_1wjld")

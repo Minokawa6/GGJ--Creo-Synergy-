@@ -2,30 +2,34 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
-@onready var sprite = get_node("AnimatedSprite2D")
+@onready var sprite = get_node("AnimatedSprite")
 
 var openBook = false
 
 signal observe(activate)
+
+func _process(delta):
+	if Input.is_action_pressed("Up"):
+		sprite.play("Up")
+	elif Input.is_action_pressed("Down"):
+		sprite.play("Down")
+	elif Input.is_action_pressed("Left"):
+		sprite.play("Left")
+	elif Input.is_action_pressed("Right"):
+		sprite.play("Right")
+	else:
+		sprite.stop()
 
 func _physics_process(delta):
 	# Used to process player movement
 	var direction = Vector2()
 	var collision
 	
+	
 	if !openBook:
 		# Player can only move if the book is not opened
-		direction.x = Input.get_axis("Right", "Left")
+		direction.x = Input.get_axis("Left", "Right")
 		direction.y = Input.get_axis("Up","Down")
-	
-	if direction.y < 0:
-		sprite.frame = 1
-	elif direction.y > 0: 
-		sprite.frame = 0
-	elif direction.x > 0:
-		sprite.frame = 3
-	elif direction.x < 0:
-		sprite.frame = 2
 	
 	if direction:
 		velocity = direction.normalized() * SPEED

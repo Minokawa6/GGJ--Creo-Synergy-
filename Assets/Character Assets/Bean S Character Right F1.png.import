@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dssvdjthsdejl"
-path="res://.godot/imported/Bean Sprout Side Left.png-5a3aee1785f3014fc43b7299e7bd0dc2.ctex"
+uid="uid://ug73mkw6w1q5"
+path="res://.godot/imported/Bean S Character Right F1.png-b2faf30632aeba6aabf7aa2aafc35ee5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character Assets/Bean Sprout Side Left.png"
-dest_files=["res://.godot/imported/Bean Sprout Side Left.png-5a3aee1785f3014fc43b7299e7bd0dc2.ctex"]
+source_file="res://Assets/Character Assets/Bean S Character Right F1.png"
+dest_files=["res://.godot/imported/Bean S Character Right F1.png-b2faf30632aeba6aabf7aa2aafc35ee5.ctex"]
 
 [params]
 
