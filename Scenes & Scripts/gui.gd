@@ -7,6 +7,8 @@ signal open_book(opened)
 @onready var booktxt = get_node("book_txt")
 var bookState = false
 
+	
+
 func _input(event):
 	# 'E' to observe
 	if event.is_action_pressed("Interact") and observe_btn.disabled == false and !bookState:
