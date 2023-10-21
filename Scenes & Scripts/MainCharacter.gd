@@ -7,6 +7,7 @@ const SPEED = 300.0
 var openBook = false
 
 signal observe(activate)
+signal collided_object(collision)
 
 func _process(delta):
 	if Input.is_action_pressed("Up"):
@@ -23,8 +24,6 @@ func _process(delta):
 func _physics_process(delta):
 	# Used to process player movement
 	var direction = Vector2()
-	var collision
-	
 	
 	if !openBook:
 		# Player can only move if the book is not opened
@@ -43,9 +42,10 @@ func _physics_process(delta):
 func _on_area_2d_area_entered(area):
 	#emits if Player is in an observable flower
 	observe.emit(true)
+	collided_object.emit(area)
 	print("Flower")
 
-func _on_flower_body_exited(body):
+func _on_area_2d_area_exited(area):
 	#emits if Player leaves the observable flower
 	observe.emit(false)
 	print("Left Flower")
@@ -53,3 +53,4 @@ func _on_flower_body_exited(body):
 func _on_gui_open_book(opened):
 	#detects if the book is opened or not
 	openBook = opened
+
