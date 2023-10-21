@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://c5xvvo0dd5wuy"]
+[gd_scene load_steps=8 format=3 uid="uid://c5xvvo0dd5wuy"]
 
+[ext_resource type="Script" path="res://book.gd" id="1_ih12a"]
 [ext_resource type="Texture2D" uid="uid://kwyihhw6u2et" path="res://Assets/Gui Assets/main_book_1.png" id="1_lpcs6"]
 [ext_resource type="FontFile" uid="uid://438cetq2wjec" path="res://Assets/Font/dpcomic.ttf" id="2_54j4g"]
+[ext_resource type="Texture2D" uid="uid://ddxopwvp0t0un" path="res://Assets/Gui Assets/arrow_right.png" id="2_hj3us"]
+[ext_resource type="Texture2D" uid="uid://c7gebfai3ab6n" path="res://Assets/Gui Assets/arrow_left.png" id="3_sdh4s"]
+[ext_resource type="Texture2D" uid="uid://ksnjafet0hf2" path="res://Assets/Gui Assets/main_book_2.png" id="6_jhyvh"]
+[ext_resource type="Texture2D" uid="uid://clxdmhv82moix" path="res://Assets/Gui Assets/main_book_3.png" id="7_n4bs7"]
 
 [node name="Book" type="Control"]
 layout_mode = 3
@@ -10,6 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ih12a")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -27,6 +33,40 @@ grow_vertical = 2
 scale = Vector2(0.313, 0.313)
 texture = ExtResource("1_lpcs6")
 
+[node name="arrowLeft" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1335.33
+offset_top = -469.428
+offset_right = -1035.33
+offset_bottom = -269.428
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.69, 0.69)
+texture_normal = ExtResource("3_sdh4s")
+
+[node name="arrowRight" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -632.454
+offset_top = -469.428
+offset_right = -332.454
+offset_bottom = -269.428
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.69, 0.69)
+action_mode = 0
+texture_normal = ExtResource("2_hj3us")
+stretch_mode = 0
+
 [node name="RichTextLabel" type="RichTextLabel" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
@@ -34,16 +74,165 @@ anchor_left = 0.688
 anchor_top = 0.24
 anchor_right = 0.688
 anchor_bottom = 0.24
-offset_left = -472.219
-offset_top = -135.027
-offset_right = 473.781
-offset_bottom = 133.973
+offset_left = -423.96
+offset_top = -137.88
+offset_right = 490.04
+offset_bottom = 1031.12
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_54j4g")
 theme_override_font_sizes/normal_font_size = 97
 bbcode_enabled = true
-text = "[center]WE BUSSIN OUT
-THIS IS CRAZY 
-BROSKI HEHEHE"
+text = "[color=#633529] Description:
+- grows in clusters
+- usually close to moist environments"
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.403
+anchor_top = 0.5
+anchor_right = 0.403
+anchor_bottom = 0.5
+offset_left = -457.256
+offset_top = -309.0
+offset_right = 2462.74
+offset_bottom = 1678.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.313, 0.313)
+texture = ExtResource("6_jhyvh")
+
+[node name="arrowLeft2" type="TextureButton" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1335.33
+offset_top = -469.428
+offset_right = -1035.33
+offset_bottom = -269.428
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.69, 0.69)
+texture_normal = ExtResource("3_sdh4s")
+
+[node name="arrowRight2" type="TextureButton" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -632.454
+offset_top = -469.428
+offset_right = -332.454
+offset_bottom = -269.428
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.69, 0.69)
+action_mode = 0
+texture_normal = ExtResource("2_hj3us")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.688
+anchor_top = 0.24
+anchor_right = 0.688
+anchor_bottom = 0.24
+offset_left = -421.094
+offset_top = -135.027
+offset_right = 476.906
+offset_bottom = 1033.97
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_54j4g")
+theme_override_font_sizes/normal_font_size = 97
+bbcode_enabled = true
+text = "[color=#633529]- Valuable wildlife fruit plant
+- Found in partly shaded parts"
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.403
+anchor_top = 0.5
+anchor_right = 0.403
+anchor_bottom = 0.5
+offset_left = -457.256
+offset_top = -309.0
+offset_right = 2462.74
+offset_bottom = 1678.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.313, 0.313)
+texture = ExtResource("7_n4bs7")
+
+[node name="arrowLeft2" type="TextureButton" parent="TextureRect3"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1335.33
+offset_top = -469.428
+offset_right = -1035.33
+offset_bottom = -269.428
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.69, 0.69)
+texture_normal = ExtResource("3_sdh4s")
+
+[node name="arrowRight2" type="TextureButton" parent="TextureRect3"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -632.454
+offset_top = -469.428
+offset_right = -332.454
+offset_bottom = -269.428
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.69, 0.69)
+action_mode = 0
+texture_normal = ExtResource("2_hj3us")
+stretch_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureRect3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.688
+anchor_top = 0.24
+anchor_right = 0.688
+anchor_bottom = 0.24
+offset_left = -395.96
+offset_top = -121.88
+offset_right = 467.04
+offset_bottom = 1028.12
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_54j4g")
+theme_override_font_sizes/normal_font_size = 97
+bbcode_enabled = true
+text = "[color=#633529]- highly useful medicinal properties
+- kinda looks a bit like a turkey's tail"
+
+[connection signal="pressed" from="TextureRect/arrowLeft" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureRect/arrowRight" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureRect2/arrowLeft2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureRect2/arrowRight2" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureRect3/arrowLeft2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureRect3/arrowRight2" to="." method="_on_texture_button_pressed"]

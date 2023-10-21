@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://km3yaal7f0ui"]
+[gd_scene load_steps=4 format=3 uid="uid://psrdkho4caip"]
 
-[ext_resource type="Texture2D" path="res://Assets/66ffb8f145c97b648e11ea597c03d26b.jpg" id="1_05six"]
 [ext_resource type="PackedScene" uid="uid://c8xlqxrlxk8k7" path="res://Scenes & Scripts/main_character.tscn" id="1_jjj5k"]
 [ext_resource type="Texture2D" uid="uid://d4jla6sii1cqu" path="res://icon.svg" id="3_ajxti"]
 
@@ -12,7 +11,6 @@ size = Vector2(130.844, 130.723)
 [node name="BG" type="Sprite2D" parent="."]
 position = Vector2(124, 61)
 scale = Vector2(2.35719, 2.35719)
-texture = ExtResource("1_05six")
 
 [node name="MainCharacter" parent="." instance=ExtResource("1_jjj5k")]
 
