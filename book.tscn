@@ -230,9 +230,40 @@ bbcode_enabled = true
 text = "[color=#633529]- highly useful medicinal properties
 - kinda looks a bit like a turkey's tail"
 
+[node name="Button" type="Button" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 602.0
+offset_top = 467.0
+offset_right = 687.0
+offset_bottom = 497.0
+text = "Track"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Button"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.688
+anchor_top = 0.24
+anchor_right = 0.688
+anchor_bottom = 0.24
+offset_left = -43.48
+offset_top = -1.2
+offset_right = 227.52
+offset_bottom = 91.8
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.225, 0.225)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_54j4g")
+theme_override_font_sizes/normal_font_size = 97
+bbcode_enabled = true
+text = "[color=white]TRACK"
+
 [connection signal="pressed" from="TextureRect/arrowLeft" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="TextureRect/arrowRight" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureRect2/arrowLeft2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="TextureRect2/arrowRight2" to="." method="_on_texture_button_pressed"]
 [connection signal="pressed" from="TextureRect3/arrowLeft2" to="." method="_on_texture_button_2_pressed"]
 [connection signal="pressed" from="TextureRect3/arrowRight2" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

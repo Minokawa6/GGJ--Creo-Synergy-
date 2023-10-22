@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://g0reccd2uefl"
+path="res://.godot/imported/Cute Background Music No Copyright Cute Copyright Free Music.mp3-cab449acf19d18a36108317ca4de4694.mp3str"
+
+[deps]
+
+source_file="res://Assets/BGM/Cute Background Music No Copyright Cute Copyright Free Music.mp3"
+dest_files=["res://.godot/imported/Cute Background Music No Copyright Cute Copyright Free Music.mp3-cab449acf19d18a36108317ca4de4694.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

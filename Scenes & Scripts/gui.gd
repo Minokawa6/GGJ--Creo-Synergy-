@@ -8,6 +8,7 @@ signal open_book(opened)
 @onready var azalea = get_node("Azalea")
 @onready var flower = get_node("Random Flower")
 @onready var beautyberry = get_node("Beautyberry")
+@onready var trackSignal = get_node("Book/Button")
 
 var bookState = false
 var collidedObject
@@ -59,4 +60,3 @@ func _on_texture_button_pressed():
 
 func _on_main_character_collided_object(collision):
 	collidedObject = collision
-
