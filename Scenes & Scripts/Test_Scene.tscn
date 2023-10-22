@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://psrdkho4caip"]
+
+[ext_resource type="PackedScene" uid="uid://c8xlqxrlxk8k7" path="res://Scenes & Scripts/main_character.tscn" id="1_jjj5k"]
+[ext_resource type="Texture2D" uid="uid://d4jla6sii1cqu" path="res://icon.svg" id="3_ajxti"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5s1t"]
+size = Vector2(130.844, 130.723)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(124, 61)
+scale = Vector2(2.35719, 2.35719)
+
+[node name="MainCharacter" parent="." instance=ExtResource("1_jjj5k")]
+
+[node name="Flower" type="StaticBody2D" parent="."]
+position = Vector2(-187, -140)
+scale = Vector2(0.351563, 0.367188)
+
+[node name="Flower" type="Sprite2D" parent="Flower" groups=["Flower"]]
+modulate = Color(0.768627, 0.341176, 0.294118, 1)
+texture = ExtResource("3_ajxti")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower"]
+position = Vector2(0, 9.15527e-05)
+shape = SubResource("RectangleShape2D_l5s1t")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-812, -227, -755, -189, -714, -185, -711, -236, -674, -244, -657, -237, -639, -243, -616, -266, -591, -210, -551, -204, -520, -214, -500, -182, -469, -178, -454, -184, -456, -224, -399, -229, -374, -224, -359, -228, -326, -230, -325, -198, -287, -189, -253, -191, -268, -207, -279, -240, -252, -245, -238, -238, -242, -227, -218, -227, -206, -230, -211, -249, -221, -255, -217, -271, -191, -269, -215, -281, -222, -299, -214, -318, -218, -340, -207, -376, -200, -430, -191, -469, -822, -469, -819, -227)

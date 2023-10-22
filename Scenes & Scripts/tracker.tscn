@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://baco4kkwd7sb1"]
+
+[ext_resource type="Texture2D" uid="uid://lq43ccrrcjg0" path="res://Assets/Gui Assets/trackerBookmark.png" id="1_o0g3q"]
+
+[node name="tracker" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 913.0
+offset_top = 75.0
+offset_right = 1620.0
+offset_bottom = 346.0
+grow_horizontal = 2
+scale = Vector2(0.345, 0.345)
+texture = ExtResource("1_o0g3q")

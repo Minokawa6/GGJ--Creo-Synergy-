@@ -11,6 +11,8 @@ signal open_book(opened)
 var bookState = false
 var collidedObject
 
+	
+
 func _input(event):
 	# 'E' to observe
 	if event.is_action_pressed("Interact") and (azalea.visible or flower.visible):
