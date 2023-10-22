@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://6hesxa1oq5in"]
+[gd_scene load_steps=9 format=3 uid="uid://6hesxa1oq5in"]
 
-[ext_resource type="Texture2D" uid="uid://cynyvwro2grtu" path="res://Assets/Temporary Assets/66ffb8f145c97b648e11ea597c03d26b.jpg" id="1_83o42"]
+[ext_resource type="Texture2D" uid="uid://dnji771rbgysx" path="res://Assets/Level Assets/Background_for_GJP.png" id="1_m6ba0"]
 [ext_resource type="PackedScene" uid="uid://c8xlqxrlxk8k7" path="res://Scenes & Scripts/main_character.tscn" id="2_a14ly"]
 [ext_resource type="Texture2D" uid="uid://d4jla6sii1cqu" path="res://icon.svg" id="3_42inv"]
+[ext_resource type="Script" path="res://Scenes & Scripts/Camera2D2.gd" id="3_r4c0p"]
 [ext_resource type="PackedScene" uid="uid://o7nbri1n5ban" path="res://Scenes & Scripts/gui.tscn" id="4_uso71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83ag6"]
@@ -11,19 +12,20 @@ size = Vector2(128, 129)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5s1t"]
 size = Vector2(130.844, 130.723)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_88lno"]
+
 [node name="Level_One" type="Node2D"]
 
 [node name="BG" type="Sprite2D" parent="."]
-position = Vector2(124, 61)
-scale = Vector2(2.35719, 2.35719)
-texture = ExtResource("1_83o42")
-metadata/_edit_lock_ = true
+position = Vector2(1, -1)
+texture = ExtResource("1_m6ba0")
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_a14ly")]
 
 [node name="Camera2D2" type="Camera2D" parent="MainCharacter"]
 position = Vector2(0, 5.96046e-08)
 scale = Vector2(0.351563, 0.367188)
+script = ExtResource("3_r4c0p")
 
 [node name="Area2D2" type="Area2D" parent="MainCharacter"]
 visible = false
@@ -32,9 +34,11 @@ visible = false
 shape = SubResource("RectangleShape2D_83ag6")
 metadata/_edit_lock_ = true
 
-[node name="Flower" type="Area2D" parent="." groups=["Flower"]]
+[node name="Flower" type="Area2D" parent="." groups=["Azalea"]]
 position = Vector2(-187, -140)
 scale = Vector2(0.351563, 0.367188)
+collision_layer = 2
+collision_mask = 2
 metadata/_edit_lock_ = true
 
 [node name="Flower" type="Sprite2D" parent="Flower" groups=["Flower"]]
@@ -47,6 +51,35 @@ position = Vector2(0, 9.15527e-05)
 shape = SubResource("RectangleShape2D_l5s1t")
 metadata/_edit_lock_ = true
 
+[node name="Wall" type="StaticBody2D" parent="Flower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower/Wall"]
+scale = Vector2(2.84444, 2.7234)
+shape = SubResource("CircleShape2D_88lno")
+
+[node name="Flower2" type="Area2D" parent="." groups=["Flower"]]
+position = Vector2(-159, 151)
+scale = Vector2(0.351563, 0.367188)
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="Flower" type="Sprite2D" parent="Flower2" groups=["Flower"]]
+modulate = Color(0.768627, 0.341176, 0.294118, 1)
+texture = ExtResource("3_42inv")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower2"]
+position = Vector2(0, 9.15527e-05)
+shape = SubResource("RectangleShape2D_l5s1t")
+metadata/_edit_lock_ = true
+
+[node name="Wall" type="StaticBody2D" parent="Flower2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower2/Wall"]
+scale = Vector2(2.84444, 2.7234)
+shape = SubResource("CircleShape2D_88lno")
+
 [node name="Wall" type="StaticBody2D" parent="."]
 visible = false
 
@@ -58,7 +91,6 @@ polygon = PackedVector2Array(-812, -227, -755, -189, -714, -185, -711, -236, -67
 [node name="Gui" parent="CanvasLayer" instance=ExtResource("4_uso71")]
 layout_direction = 0
 
+[connection signal="collided_object" from="MainCharacter" to="CanvasLayer/Gui" method="_on_main_character_collided_object"]
 [connection signal="observe" from="MainCharacter" to="CanvasLayer/Gui" method="_on_main_character_observe"]
-[connection signal="area_entered" from="Flower" to="MainCharacter" method="_on_area_2d_area_entered"]
-[connection signal="body_exited" from="Flower" to="MainCharacter" method="_on_flower_body_exited"]
 [connection signal="open_book" from="CanvasLayer/Gui" to="MainCharacter" method="_on_gui_open_book"]
