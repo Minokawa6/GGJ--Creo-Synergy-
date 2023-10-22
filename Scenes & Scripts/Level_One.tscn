@@ -1,18 +1,24 @@
-[gd_scene load_steps=9 format=3 uid="uid://6hesxa1oq5in"]
+[gd_scene load_steps=10 format=3 uid="uid://6hesxa1oq5in"]
 
 [ext_resource type="Texture2D" uid="uid://dnji771rbgysx" path="res://Assets/Level Assets/Background_for_GJP.png" id="1_m6ba0"]
 [ext_resource type="PackedScene" uid="uid://c8xlqxrlxk8k7" path="res://Scenes & Scripts/main_character.tscn" id="2_a14ly"]
-[ext_resource type="Texture2D" uid="uid://d4jla6sii1cqu" path="res://icon.svg" id="3_42inv"]
 [ext_resource type="Script" path="res://Scenes & Scripts/Camera2D2.gd" id="3_r4c0p"]
-[ext_resource type="PackedScene" uid="uid://o7nbri1n5ban" path="res://Scenes & Scripts/gui.tscn" id="4_uso71"]
+[ext_resource type="PackedScene" uid="uid://btx4h7tc7om0h" path="res://Scenes & Scripts/gui.tscn" id="4_uso71"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_83ag6"]
 size = Vector2(128, 129)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l5s1t"]
-size = Vector2(130.844, 130.723)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4201h"]
+size = Vector2(33, 2181)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_88lno"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jlibv"]
+size = Vector2(2143.5, 37.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbme4"]
+size = Vector2(40, 2167)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7f2i"]
+size = Vector2(2147, 46.5)
 
 [node name="Level_One" type="Node2D"]
 
@@ -21,6 +27,7 @@ position = Vector2(1, -1)
 texture = ExtResource("1_m6ba0")
 
 [node name="MainCharacter" parent="." instance=ExtResource("2_a14ly")]
+position = Vector2(384, 800)
 
 [node name="Camera2D2" type="Camera2D" parent="MainCharacter"]
 position = Vector2(0, 5.96046e-08)
@@ -34,62 +41,167 @@ visible = false
 shape = SubResource("RectangleShape2D_83ag6")
 metadata/_edit_lock_ = true
 
-[node name="Flower" type="Area2D" parent="." groups=["Azalea"]]
+[node name="Azalea" type="Area2D" parent="." groups=["Azalea"]]
+position = Vector2(-187, -140)
+scale = Vector2(0.351563, 0.367188)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Wall" type="StaticBody2D" parent="Azalea"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Azalea/Wall"]
+polygon = PackedVector2Array(2278.4, -1078.47, 2653.86, -1015.83, 3017.95, -1043.06, 3222.75, -1239.15, 2753.42, -1258.21)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Azalea"]
+polygon = PackedVector2Array(2153.24, -1094.81, 2340.97, -1233.7, 2656.71, -1296.34, 2864.35, -1451.57, 3268.26, -1274.55, 3393.42, -1211.91, 2995.2, -994.041, 2835.91, -934.126, 2480.35, -912.339, 2315.37, -958.637, 2210.13, -999.488)
+metadata/_edit_lock_ = true
+
+[node name="Azalea2" type="Area2D" parent="." groups=["Azalea"]]
 position = Vector2(-187, -140)
 scale = Vector2(0.351563, 0.367188)
 collision_layer = 2
 collision_mask = 2
 metadata/_edit_lock_ = true
 
-[node name="Flower" type="Sprite2D" parent="Flower" groups=["Flower"]]
-modulate = Color(0.768627, 0.341176, 0.294118, 1)
-texture = ExtResource("3_42inv")
+[node name="Wall" type="StaticBody2D" parent="Azalea2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Azalea2/Wall"]
+polygon = PackedVector2Array(975.643, -1271.83, 1945.6, -1211.91, 1447.82, -1195.57, 947.199, -1225.53)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Azalea2"]
+polygon = PackedVector2Array(1968.35, -1225.53, 1348.26, -1331.74, 1260.09, -1432.51, 907.376, -1342.64, 944.354, -1201.02, 1376.71, -1217.36, 1965.51, -1179.23)
+
+[node name="Azalea3" type="Area2D" parent="." groups=["Azalea"]]
+position = Vector2(-187, -140)
+scale = Vector2(0.351563, 0.367188)
+collision_layer = 2
+collision_mask = 2
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower"]
-position = Vector2(0, 9.15527e-05)
-shape = SubResource("RectangleShape2D_l5s1t")
-metadata/_edit_lock_ = true
+[node name="Wall" type="StaticBody2D" parent="Azalea3"]
 
-[node name="Wall" type="StaticBody2D" parent="Flower"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Azalea3/Wall"]
+polygon = PackedVector2Array(1951.29, -1794.72, 1575.82, -1914.55, 1675.38, -2121.53, 2193.06, -2124.25, 1729.42, -2246.81, 1240.18, -2124.25, 1618.49, -2118.81, 1518.93, -1941.78, 1095.11, -1920, 1422.22, -1865.53, 1450.66, -1778.38)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower/Wall"]
-scale = Vector2(2.84444, 2.7234)
-shape = SubResource("CircleShape2D_88lno")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Azalea3"]
+polygon = PackedVector2Array(1012.62, -1917.27, 1243.02, -2205.95, 1672.53, -2391.15, 2178.84, -2257.7, 2230.04, -2173.27, 2224.35, -2097.02, 1848.89, -2094.29, 1698.13, -1941.78, 1979.73, -1838.3, 2008.18, -1729.36, 1911.46, -1699.4, 1419.38, -1737.53, 1285.69, -1870.98)
 
-[node name="Flower2" type="Area2D" parent="." groups=["Flower"]]
+[node name="Beautyberry" type="Area2D" parent="." groups=["Beautyberry"]]
 position = Vector2(-159, 151)
 scale = Vector2(0.351563, 0.367188)
 collision_layer = 2
 collision_mask = 2
 metadata/_edit_lock_ = true
 
-[node name="Flower" type="Sprite2D" parent="Flower2" groups=["Flower"]]
-modulate = Color(0.768627, 0.341176, 0.294118, 1)
-texture = ExtResource("3_42inv")
+[node name="Wall" type="StaticBody2D" parent="Beautyberry"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Beautyberry/Wall"]
+polygon = PackedVector2Array(-199.111, -209.702, 685.51, -223.319, 199.111, -266.893)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Beautyberry"]
+polygon = PackedVector2Array(-247.466, -190.638, -176.355, -411.233, 705.421, -321.361, 716.799, -204.255)
+
+[node name="Beautyberry2" type="Area2D" parent="." groups=["Beautyberry"]]
+position = Vector2(-159, 151)
+scale = Vector2(0.351563, 0.367188)
+collision_layer = 2
+collision_mask = 2
 metadata/_edit_lock_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower2"]
-position = Vector2(0, 9.15527e-05)
-shape = SubResource("RectangleShape2D_l5s1t")
+[node name="Wall" type="StaticBody2D" parent="Beautyberry2"]
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Beautyberry2/Wall"]
+polygon = PackedVector2Array(59.7332, 348.595, 366.933, 405.787, 711.11, 354.042, 927.288, 394.893, 1257.24, 354.042, 1547.38, 389.446, 1243.02, 296.851, 657.066, 324.085)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Beautyberry2"]
+polygon = PackedVector2Array(-22.7555, 343.148, 201.955, 413.957, 511.999, 411.233, 702.577, 367.659, 890.31, 405.787, 1243.02, 370.382, 1598.58, 427.574, 1405.15, 198.808, 856.177, 196.085, 275.911, 130.723)
+
+[node name="Beautyberry3" type="Area2D" parent="." groups=["Beautyberry"]]
+position = Vector2(-159, 151)
+scale = Vector2(0.351563, 0.367188)
+collision_layer = 2
+collision_mask = 2
 metadata/_edit_lock_ = true
 
-[node name="Wall" type="StaticBody2D" parent="Flower2"]
+[node name="Wall" type="StaticBody2D" parent="Beautyberry3"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Flower2/Wall"]
-scale = Vector2(2.84444, 2.7234)
-shape = SubResource("CircleShape2D_88lno")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Beautyberry3/Wall"]
+polygon = PackedVector2Array(-1103.64, -226.042, -1572.98, -234.212, -1632.71, -397.616, -2244.26, -405.787, -1826.13, -460.255, -1541.69, -433.021, -1513.24, -272.34)
 
-[node name="Wall" type="StaticBody2D" parent="."]
-visible = false
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Beautyberry3"]
+polygon = PackedVector2Array(-1043.91, -236.936, -1353.95, -443.914, -1763.55, -588.255, -2082.13, -601.872, -2295.46, -435.744, -2295.46, -378.553, -1646.93, -375.829, -1635.55, -212.425, -1060.98, -201.532)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
-polygon = PackedVector2Array(-812, -227, -755, -189, -714, -185, -711, -236, -674, -244, -657, -237, -639, -243, -616, -266, -591, -210, -551, -204, -520, -214, -500, -182, -469, -178, -454, -184, -456, -224, -399, -229, -374, -224, -359, -228, -326, -230, -325, -198, -287, -189, -253, -191, -268, -207, -279, -240, -252, -245, -238, -238, -242, -227, -218, -227, -206, -230, -211, -249, -221, -255, -217, -271, -191, -269, -215, -281, -222, -299, -214, -318, -218, -340, -207, -376, -200, -430, -191, -469, -822, -469, -819, -227)
+[node name="Beautyberry4" type="Area2D" parent="." groups=["Beautyberry"]]
+position = Vector2(-159, 151)
+scale = Vector2(0.351563, 0.367188)
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="Wall" type="StaticBody2D" parent="Beautyberry4"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Beautyberry4/Wall"]
+polygon = PackedVector2Array(-1504.71, -1007.66, -1154.84, -996.765, -878.932, -846.978, -307.2, -838.807, -383.999, -876.935, -856.177, -893.275, -1140.62, -1034.89, -1373.86, -1032.17, -1447.82, -1141.1)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Beautyberry4"]
+polygon = PackedVector2Array(-1570.13, -972.254, -1245.86, -972.254, -924.443, -825.19, -238.933, -811.573, -548.977, -1045.79, -941.51, -1116.59, -1328.35, -1124.76, -1481.95, -1312.68)
+
+[node name="Flower" type="Area2D" parent="." groups=["Flower"]]
+position = Vector2(-159, 151)
+scale = Vector2(0.351563, 0.367188)
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_lock_ = true
+
+[node name="Wall" type="StaticBody2D" parent="Flower"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Flower/Wall"]
+polygon = PackedVector2Array(2528.71, -1459.74, 2602.66, -1506.04, 2702.22, -1481.53, 2611.2, -1440.68)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Flower"]
+polygon = PackedVector2Array(2813.15, -1440.68, 2286.93, -1369.87, 2594.13, -1582.3)
+
+[node name="Tree" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Tree"]
+polygon = PackedVector2Array(-790, -187, -719, -205, -731, -238, -773, -266, -836, -251, -859, -224, -820, -220)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Gui" parent="CanvasLayer" instance=ExtResource("4_uso71")]
 layout_direction = 0
+
+[node name="Left wall" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left wall"]
+position = Vector2(-1041.5, 23.5)
+shape = SubResource("RectangleShape2D_4201h")
+metadata/_edit_lock_ = true
+
+[node name="Down Wall" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Down Wall"]
+position = Vector2(16.25, 1042.25)
+shape = SubResource("RectangleShape2D_jlibv")
+metadata/_edit_lock_ = true
+
+[node name="Right wall" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right wall"]
+position = Vector2(1045, -14.5)
+shape = SubResource("RectangleShape2D_pbme4")
+metadata/_edit_lock_ = true
+
+[node name="Up Wall" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Up Wall"]
+position = Vector2(0.5, -1047.75)
+shape = SubResource("RectangleShape2D_k7f2i")
+metadata/_edit_lock_ = true
 
 [connection signal="collided_object" from="MainCharacter" to="CanvasLayer/Gui" method="_on_main_character_collided_object"]
 [connection signal="observe" from="MainCharacter" to="CanvasLayer/Gui" method="_on_main_character_observe"]

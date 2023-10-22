@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://btx4h7tc7om0h"]
+[gd_scene load_steps=6 format=3 uid="uid://btx4h7tc7om0h"]
 
 [ext_resource type="Script" path="res://Scenes & Scripts/gui.gd" id="1_edua8"]
 [ext_resource type="Texture2D" uid="uid://b1gnrgdvs7e6u" path="res://Assets/Gui Assets/side_book.png" id="2_ksj3l"]
 [ext_resource type="Texture2D" uid="uid://m56pisrig7aa" path="res://Assets/Gui Assets/inspect_popup.png" id="3_7g0e6"]
 [ext_resource type="Texture2D" uid="uid://d1gdprr3futkr" path="res://Assets/Gui Assets/inspect_popup_grey.png" id="4_1wjld"]
 [ext_resource type="PackedScene" uid="uid://c5xvvo0dd5wuy" path="res://book.tscn" id="5_j21xu"]
-[ext_resource type="Texture2D" uid="uid://lq43ccrrcjg0" path="res://Assets/Gui Assets/trackerBookmark.png" id="6_6rvw5"]
 
 [node name="Gui" type="Control"]
 layout_direction = 1
@@ -141,10 +140,61 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 41
-text = "This is just an azalea"
+text = "This is an azalea"
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Azalea"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -274.0
+offset_top = -60.0
+offset_right = 274.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 41
+text = "Press 'E' To close"
+horizontal_alignment = 1
+
+[node name="Beautyberry" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Beautyberry"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.156863, 0.156863, 0.156863, 0.388235)
+
+[node name="Label" type="Label" parent="Beautyberry"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 41
+text = "This is an american beautyberry"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Beautyberry"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
